@@ -1,15 +1,17 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+import java.util.Scanner;
+public class BirthDateTime {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Scanner in = new Scanner(System.in);
+        int birthMonth = 0;
+        int birthYear = 0;
+        birthYear = SafeInput.getRangeInt(in, "Please enter your birth month ", 1, 12 );
+        int birthDay = 0;
+        birthDay = SafeInput.getRangeInt(in, "Please enter you birth day ", 1, 31);
+        int birthMin = 0;
+        birthMin = SafeInput.getRangeInt(in,"Please Enter your birth minute ", 1, 59);
+        int birthHour = 0;
+        birthHour = SafeInput.getRangeInt(in, "Enter you brith hour: ", 1, 24);
+        System.out.println("\nYour birth date and time: ");
+        System.out.printf("Year: %d\nMonth: %d\nHour: %d\nMinute: %d\n", birthYear, birthMonth, birthDay, birthHour, birthMin);
     }
 }
